@@ -48,13 +48,15 @@ def segundo_maior(numeros):
     if len(numeros) < 1:
         return None
     maior = numeros[0]
-    segundo_maior = numeros[-1]
+    segundo_maior = None
     for num in numeros:
         if num > maior:
             segundo_maior = maior
             maior = num
-        if num > segundo_maior and num < maior:
+        elif segundo_maior is not None:
+            if num > segundo_maior and num < maior:
+                segundo_maior = num
+        elif segundo_maior is None and num < maior:
             segundo_maior = num
-    if segundo_maior == maior:
-        return None
+
     return segundo_maior

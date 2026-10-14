@@ -61,6 +61,8 @@ def test_ordenar_e_contar(numeros, esperado):
     ([0, -1, -2], -1),
     ([10], None),
     ([], None),
+    ([5, 3, 5, 4], 4),
+    ([10, 8, 10], 8),
 ])
 def test_segundo_maior(numeros, esperado):
     assert segundo_maior(numeros) == esperado
